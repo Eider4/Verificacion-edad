@@ -1,0 +1,20 @@
+.table_users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5em;
+}
+.div_card_user {
+  border: rgb(75, 121, 5) solid 2px;
+  margin-bottom: 1em;
+}
+.div_card_user td {
+  text-align: start;
+  padding-right: 1em;
+  padding-left: 0.5em;
+  border-right: rgb(63, 82, 34) solid 2px;
+  border-bottom: rgb(116, 151, 63) solid 2px;
+}
+.div_card_user b {
+  padding-right: 1em;
+}
