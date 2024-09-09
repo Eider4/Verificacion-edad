@@ -1,6 +1,7 @@
 import useUsersVerification from "../../store/manageUsers";
 import style from "./CardUsers.module.css";
 export default function CardUsers({ users }) {
+  console.log(users)
   return (
     <table className={style.table_users}>
       {users.length > 0 &&
