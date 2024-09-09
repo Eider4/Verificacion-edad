@@ -12,13 +12,15 @@ export default function VerificationAge({
   const [validationColor, setValidationColor] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (ageUser < 13) {
+    const menor13 = () => {
       setMensagge("You can't enter the event");
       setValidationColor("#ff0000");
       setTimeout(() => {
         setMensagge("");
       }, 2000);
-    } else if (ageUser > 17) {
+      return;
+    };
+    const mayor17 = () => {
       setMensagge("You can enter the event");
       setValidationColor("#00ff04");
       const entryDate = new Date();
@@ -32,13 +34,20 @@ export default function VerificationAge({
         setMensagge("");
         setverificationAge(false);
       }, 1000);
-    } else {
+      return
+    };
+    const menor13mayor17 = () => {
       setMensagge("You can enter the event with adult supervision");
       setValidationColor("#f6ff00");
       setTimeout(() => {
         setMensagge("I am accompanied by a responsible adult");
       }, 2000);
-    }
+      return;
+    };
+    ageUser < 13 && menor13();
+    ageUser > 17 && mayor17();
+    12 > ageUser < 17 && menor13mayor17();
+    // ageUser < 13 ? menor13() : ageUser > 17 ? mayor17() : menor13mayor17();
   };
   return (
     <div style={{ display: verificationAge ? "" : "none" }}>
